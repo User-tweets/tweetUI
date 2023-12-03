@@ -1,0 +1,110 @@
+<div class="bootstrap-wrapper">
+    <div class="container text-center">
+        <div class="row" style="margin-top: 100px;">
+            <div class="col-md-6 offset-md-3">
+                <h1 class="color"><strong>Login</strong></h1>
+                <form [formGroup]="credentials" (ngSubmit)="onSubmit()">
+                    <mat-form-field appearance="outline">
+                        <mat-label>
+                            Enter mail
+                        </mat-label>
+                        <input formControlName="username" id="username" matInput type="text">
+                        <mat-error *ngIf="username!.hasError('email') && !username!.hasError('required')">
+                            Please enter a valid email address
+                        </mat-error>
+                        <mat-error *ngIf="username!.hasError('required')">
+                            Email is <strong>required</strong>
+                        </mat-error>
+                    </mat-form-field>
+                    <mat-form-field appearance="outline">
+                        <mat-label>
+                            Enter password
+                        </mat-label>
+                        <input formControlName="password" name="password" matInput type="password">
+                        <mat-error *ngIf="password!.hasError('minlength') && !password!.hasError('required')">
+                            Please enter stronger password
+                        </mat-error>
+                        <mat-error *ngIf="password!.hasError('required')">
+                            password is <strong>required</strong>
+                        </mat-error>
+                    </mat-form-field>
+                    <div class="offset-md-9" style="margin-top: 15px;">
+                        <a routerLink="/forgot" style="text-decoration: none;">Forgot Password ?</a>
+                    </div>
+                    <button mat-raised-button style="width: 50%;" color="primary" type="submit"
+                        [disabled]="!credentials.valid">login</button>
+                </form>
+                <div style="margin-top: 15px;">
+                    Don't have an account?<button mat-button routerLink="/register">
+                        Register</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<!-- <div class="bootstrap-wrapper">
+    <div class="container text-center">
+        <div class="row" style="margin-top: 100px;">
+            <div class="col-md-6 offset-md-3">
+                <h1 class="color"><strong>Login</strong></h1>
+                <form (ngSubmit)="onSubmit()">
+                    <mat-form-field style="width: 100%;">
+                        <mat-label>
+                            Enter mail
+                        </mat-label>
+                        <input [(ngModel)]="credentials.loginId" name="loginId" required matInput type="text">
+                    </mat-form-field>
+                    <mat-form-field style="width: 100%;">
+                        <mat-label>
+                            Enter password
+                        </mat-label>
+                        <input [(ngModel)]="credentials.password" name="password" required matInput type="password">
+                    </mat-form-field>
+                    <div class="row" style="margin-top: 15px;"> 
+                        <a [routerLink]="['/forgot']" style="text-decoration: none;">Forgot Password ?</a>
+                        </div>
+                    <button mat-raised-button color="primary" type="submit">login</button>
+                </form>
+                <div class="row" style="margin-top: 15px;"> 
+                <a [routerLink]="['/register']" style="text-decoration: none;">Don't have an account? Register</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div> -->
+
+
+
+<!-- <div class="bootstrap-wrapper">
+    <div class="container mt text-center">
+        <h1 class="text-center">Welcome to tweet app</h1>
+        <div class="row col-md-4 offset-md-4">
+            <mat-card class="example-card" >
+                <mat-card-title>Login</mat-card-title>
+                <div class="example-container">
+                    <mat-form-field appearance="fill" style="width: 100%;">
+                      <mat-label>Enter your email</mat-label>
+                      <input matInput placeholder="pat@example.com" [formControl]="email" required>
+                      <mat-error *ngIf="email.invalid">{{getErrorMessage()}}</mat-error>
+                    </mat-form-field>
+                </div>
+                <div class="example-container">
+                    <mat-form-field appearance="fill">
+                        <mat-label>Enter your password</mat-label>
+                        <input matInput [type]="hide ? 'password' : 'text'" required>
+                        <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+                          <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+                        </button>
+                      </mat-form-field>
+                </div>        
+                <mat-card-actions>
+                  <button mat-button>Submit</button>
+                  <button mat-button>Register</button>
+                </mat-card-actions>
+              </mat-card>
+        </div>
+    </div>
+</div> -->

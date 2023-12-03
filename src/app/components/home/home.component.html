@@ -1,0 +1,43 @@
+<div class="bootstrap-wrapper">
+    <div class="container mt">
+        <h1 class="color text-center"><strong>Welcome</strong></h1>
+        <mat-card *ngFor="let tweet of tweets" class="mt">
+            <mat-card-title><mat-icon>account_circle</mat-icon>{{tweet.username}}</mat-card-title>
+            <mat-card-subtitle>{{tweet.time}}</mat-card-subtitle>
+            <mat-card-content>{{tweet.message}}</mat-card-content>
+            <mat-card-actions style="background-color: teal; color: #fff;">
+                <button (click)="like(tweet.tweetId)" style="width: 25%;"
+                    mat-icon-button><mat-icon>thumb_up</mat-icon></button>
+                <button (click)="replyTweet(tweet.tweetId,tweet.username)" style="width: 25%;"
+                    mat-icon-button><mat-icon> comment</mat-icon></button>
+                <button (click)="updateTweet(tweet.tweetId,tweet.username)" style="width: 25%;"
+                    mat-icon-button><mat-icon>edit</mat-icon></button>
+                <button (click)="delete(tweet.tweetId,tweet.username)" style="width: 25%;"
+                    mat-icon-button><mat-icon>delete</mat-icon></button>
+            </mat-card-actions>
+            <h1 class="color">Comments</h1>
+            <div *ngIf="tweet.comments==''">No comments yet be First to comment</div>
+            <h3 *ngFor="let comment of tweet.comments">{{comment.username}} commented
+                <strong>{{comment.comment}}</strong>
+            </h3>
+        </mat-card>
+        <div *ngIf="tweets==''">
+            <h1 class="color text-center">No Tweets yet! Post First</h1>
+        </div>
+    </div>
+</div>
+
+
+
+<!-- <mat-card *ngFor="let tweet of tweets" class="mt">
+    <mat-card-title>{{tweet.username}}</mat-card-title>
+    <mat-card-subtitle>{{tweet.time}}</mat-card-subtitle>
+    <h1>{{tweet.message}}</h1>
+    <mat-card-actions>
+    <button (click)="like(tweet.tweetId)" mat-button>LIKE</button>
+    <button (click)="replyTweet(tweet.tweetId,tweet.username)" mat-button>Reply</button>
+    <button (click)="updateTweet(tweet.tweetId,tweet.username)" mat-button>UPDATE</button>
+    <button (click)="delete(tweet.tweetId,tweet.username)" mat-button>DELETE</button>
+    </mat-card-actions>
+    <h3 *ngFor="let comment of tweet.comments">{{comment.comment}}</h3>
+</mat-card> -->
