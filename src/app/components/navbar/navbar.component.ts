@@ -28,7 +28,7 @@ export class NavbarComponent implements OnInit {
   
   logoutUser(){
     this.loginService.logout();
-    // this.router.navigate(['/tweetUI/']);
+    this.router.navigate(['/tweetUI/']);
     // location.href = '/';
   }
 
