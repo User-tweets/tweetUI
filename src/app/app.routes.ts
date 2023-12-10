@@ -47,5 +47,10 @@ export const routes: Routes = [
         component: PostTweetComponent,
         pathMatch: 'full',
         canActivate: [authGuard],
+      },
+      {
+        path: '**',
+        component: LoginComponent,
+        pathMatch: 'full',
       }
 ];
