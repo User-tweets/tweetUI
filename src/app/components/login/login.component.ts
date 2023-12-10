@@ -41,7 +41,7 @@ export class LoginComponent implements OnInit {
         console.log(response);
         localStorage.setItem('username', this.credentials.value.username!);
         localStorage.setItem('token', response.token);
-        this.router.navigate(['/home']);
+        this.router.navigate(['/tweetUI/home']);
         // window.location.href = '/home';
       },
       (error) => {
