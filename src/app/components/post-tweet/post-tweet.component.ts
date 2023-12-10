@@ -32,7 +32,7 @@ export class PostTweetComponent implements OnInit {
       this.tweetService.saveTweet(this.tweet.username, this.tweet).subscribe(
         (response) => {
           console.warn(response);
-          this.router.navigate(['/tweetUI/home']);
+          this.router.navigate(['/home']);
           // window.location.href = '/home';
         },
         (error) => {
