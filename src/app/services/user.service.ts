@@ -6,7 +6,8 @@ import { Injectable } from '@angular/core';
 })
 export class UserService {
 
-  baseUrl = "http://localhost:8080";
+  // baseUrl = "http://localhost:8080";
+  baseUrl = 'https://4k6krjf1le.execute-api.ap-south-1.amazonaws.com/Prod/';
 
   constructor(private http:HttpClient) { }
 

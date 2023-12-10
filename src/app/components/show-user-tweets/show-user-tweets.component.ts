@@ -6,10 +6,11 @@ import { MatDialog } from '@angular/material/dialog';
 import { DialogreplyComponent } from '../dialogreply/dialogreply.component';
 import { MatCardModule } from '@angular/material/card';
 import { MatIconModule } from '@angular/material/icon';
+import { NavbarComponent } from '../navbar/navbar.component';
 @Component({
   selector: 'app-show-user-tweets',
   standalone: true,
-  imports: [CommonModule, MatCardModule, MatIconModule],
+  imports: [CommonModule, MatCardModule, MatIconModule, NavbarComponent],
   templateUrl: './show-user-tweets.component.html',
   styleUrl: './show-user-tweets.component.css'
 })

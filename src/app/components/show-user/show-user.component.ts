@@ -13,11 +13,13 @@ import { MatDialog } from '@angular/material/dialog';
 import { MatPaginatorModule, MatPaginator } from '@angular/material/paginator';
 import { MatSort, MatSortModule } from '@angular/material/sort';
 import { MatTableDataSource, MatTableModule } from '@angular/material/table';
+import { NavbarComponent } from '../navbar/navbar.component';
 
 @Component({
   selector: 'app-show-user',
   standalone: true,
-  imports: [CommonModule, MatPaginatorModule, MatSortModule, MatTableModule, MatIconModule, MatFormFieldModule, ReactiveFormsModule, MatInputModule, MatButtonModule],
+  imports: [CommonModule, MatPaginatorModule, MatSortModule, MatTableModule, MatIconModule, 
+    MatFormFieldModule, ReactiveFormsModule, MatInputModule, MatButtonModule, NavbarComponent],
   templateUrl: './show-user.component.html',
   styleUrl: './show-user.component.css'
 })

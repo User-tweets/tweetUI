@@ -5,7 +5,7 @@ import { LoginService } from '../../services/login.service';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatButtonModule } from '@angular/material/button';
-import { RouterLink, RouterLinkActive, RouterOutlet } from '@angular/router';
+import { Router, RouterLink, RouterLinkActive, RouterOutlet } from '@angular/router';
 
 @Component({
   selector: 'app-forgot',
@@ -60,7 +60,8 @@ export class ForgotComponent implements OnInit {
         .subscribe(
           (response) => {
             console.warn(response);
-            window.location.href = '/';
+            this.router.navigate(['/']);
+            // window.location.href = '/';
           },
           (error) => {
             console.warn(error);
@@ -82,7 +83,7 @@ export class ForgotComponent implements OnInit {
     return false;
   }
 
-  constructor(private loginService: LoginService) {}
+  constructor(private loginService: LoginService, private router: Router) {}
 
   ngOnInit(): void {}
 }

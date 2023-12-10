@@ -5,7 +5,7 @@ import { FormControl, FormGroup, Validators, ReactiveFormsModule } from '@angula
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatButtonModule } from '@angular/material/button';
-import { RouterLink, RouterLinkActive, RouterOutlet } from '@angular/router';
+import { Router, RouterLink, RouterLinkActive, RouterOutlet } from '@angular/router';
 
 @Component({
   selector: 'app-register',
@@ -15,7 +15,7 @@ import { RouterLink, RouterLinkActive, RouterOutlet } from '@angular/router';
   styleUrl: './register.component.css'
 })
 export class RegisterComponent implements OnInit {
-  constructor(private loginService: LoginService) {}
+  constructor(private loginService: LoginService, private router: Router) {}
 
   ngOnInit(): void {}
 
@@ -57,7 +57,8 @@ export class RegisterComponent implements OnInit {
     this.loginService.registerUser(this.credentials.value).subscribe(
       (response: any) => {
         console.log(response);
-        window.location.href = '/';
+        this.router.navigate(['/']);
+        // window.location.href = '/';
       },
       (error) => {
         console.log(error);

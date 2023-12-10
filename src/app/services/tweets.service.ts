@@ -8,7 +8,8 @@ export class TweetsService {
 
   constructor(private http:HttpClient) { }
 
-  baseUrl = "http://localhost:8080";  
+  // baseUrl = "http://localhost:8080";
+  baseUrl = 'https://4k6krjf1le.execute-api.ap-south-1.amazonaws.com/Prod';  
 
   getAllTweets(){
     

@@ -5,7 +5,7 @@ import { LoginService } from '../../services/login.service';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatButtonModule } from '@angular/material/button';
-import { RouterLink, RouterLinkActive, RouterOutlet } from '@angular/router';
+import { Router, RouterLink, RouterLinkActive, RouterOutlet } from '@angular/router';
 @Component({
   selector: 'app-login',
   standalone: true,
@@ -14,7 +14,7 @@ import { RouterLink, RouterLinkActive, RouterOutlet } from '@angular/router';
   styleUrl: './login.component.css'
 })
 export class LoginComponent implements OnInit {
-  constructor(private loginService: LoginService) {}
+  constructor(private loginService: LoginService, private router: Router) {}
 
   ngOnInit(): void {}
 
@@ -41,7 +41,8 @@ export class LoginComponent implements OnInit {
         console.log(response);
         localStorage.setItem('username', this.credentials.value.username!);
         localStorage.setItem('token', response.token);
-        window.location.href = '/home';
+        this.router.navigate(['/home']);
+        // window.location.href = '/tweetUI/home';
       },
       (error) => {
         console.log(error);
