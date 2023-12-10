@@ -5,11 +5,12 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { FormsModule } from '@angular/forms';
 import { Router } from '@angular/router';
+import { NavbarComponent } from '../navbar/navbar.component';
 
 @Component({
   selector: 'app-post-tweet',
   standalone: true,
-  imports: [CommonModule, MatFormFieldModule, MatInputModule, FormsModule],
+  imports: [CommonModule, MatFormFieldModule, MatInputModule, FormsModule, NavbarComponent],
   templateUrl: './post-tweet.component.html',
   styleUrl: './post-tweet.component.css'
 })

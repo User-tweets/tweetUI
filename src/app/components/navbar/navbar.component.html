@@ -1,8 +1,8 @@
 <mat-toolbar style="background-color: teal; color: #fff;">
     <h1>Tweet</h1>
-    <button *ngIf="LoggedIn" mat-button style="margin-left: 50px;" routerLink="/home">Home</button>
-    <button *ngIf="LoggedIn" mat-button style="margin-left: 50px;" routerLink="/show-users">All-Users</button>
-    <button *ngIf="LoggedIn" mat-button style="margin-left: 50px;" routerLink="/postTweet">Post Tweet</button>
+    <button mat-button style="margin-left: 50px;" routerLink="/home">Home</button>
+    <button mat-button style="margin-left: 50px;" routerLink="/show-users">All-Users</button>
+    <button mat-button style="margin-left: 50px;" routerLink="/postTweet">Post Tweet</button>
     <span class="example-spacer"></span>
-    <button *ngIf="LoggedIn" mat-button (click)="logoutUser()">Logout</button>
+    <button mat-button (click)="logoutUser()">Logout</button>
 </mat-toolbar>

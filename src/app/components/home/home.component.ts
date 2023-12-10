@@ -7,11 +7,12 @@ import { MatDialog, MatDialogRef } from '@angular/material/dialog';
 import { MatCardModule } from '@angular/material/card';
 import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
+import { NavbarComponent } from '../navbar/navbar.component';
 
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [CommonModule,  MatCardModule, MatIconModule, MatButtonModule],
+  imports: [CommonModule,  MatCardModule, MatIconModule, MatButtonModule, NavbarComponent],
   templateUrl: './home.component.html',
   styleUrl: './home.component.css'
 })
