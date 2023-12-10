@@ -28,8 +28,8 @@ export class NavbarComponent implements OnInit {
   
   logoutUser(){
     this.loginService.logout();
-    this.router.navigate(['/']);
-    // location.href = '/';
+    // this.router.navigate(['/']);
+    location.href = '/';
   }
 
 }
